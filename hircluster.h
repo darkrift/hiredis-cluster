@@ -117,6 +117,7 @@ typedef struct redisClusterContext {
     struct timeval *connect_timeout;            /* TCP connect timeout */
     struct timeval *command_timeout;            /* Receive and send timeout */
     int max_retry_count;                        /* Allowed retry attempts */
+    char username[CONFIG_AUTHPASS_MAX_LEN + 1]; /* Include a null terminator */
     char password[CONFIG_AUTHPASS_MAX_LEN + 1]; /* Include a null terminator */
 
     struct dict *nodes;     /* Known cluster_nodes*/
